@@ -1,0 +1,48 @@
+<div>
+    <nav class="pull-left">
+        <ul class="pagination">
+            {% if paginator.num_pages > 1 %}
+                <li class="page-item">
+                    <a href="?page=1{% for k, v in kwargs.items %}{% if v %}&amp;{{ k }}={{ v|default:'' }}{% endif %}{% endfor %}" aria-label="First">
+                        <span aria-hidden="true">&laquo;</span>
+                    </a>
+                </li>
+                <li class="page-item{% if not page.has_previous %} disabled{% endif %}">
+                    <a href="?page={% if page.has_previous %}{{ page.previous_page_number }}{% else %}{{ page.number }}{% endif %}{% for k, v in kwargs.items %}{% if v %}&amp;{{ k }}={{ v|default:'' }}{% endif %}{% endfor %}" aria-label="Previous">
+                        <span aria-hidden="true">&#60;</span>
+                    </a>
+                </li>
+            {% endif %}
+
+            {% if paginator.num_pages > 10 %}
+                {% for i in prange %}
+                    {% if forloop.first and i != 1 %}<li class="disabled"><span aria-hidden="true">…</span></li>{% endif %}
+                    <li class="page-item{% if page.number == i %} active{% endif %}""><a href="?page={{ i }}{% for k, v in kwargs.items %}{% if v %}&amp;{{ k }}={{ v|default:'' }}{% endif %}{% endfor %}">{{ i }}{% if page.number == i %} <span class="sr-only">(current)</span>{% endif %}</a></li>
+                    {% if forloop.last and i != paginator.num_pages %}<li class="disabled"><span aria-hidden="true">…</span></li>{% endif %}
+                {% endfor %}
+            {% else %}
+                {% for i in paginator.page_range %}
+                    <li class="page-item{% if page.number == i %} active{% endif %}""><a href="?page={{ i }}{% for k, v in kwargs.items %}{% if v %}&amp;{{ k }}={{ v|default:'' }}{% endif %}{% endfor %}">{{ i }}{% if page.number == i %} <span class="sr-only">(current)</span>{% endif %}</a></li>
+                {% endfor %}
+            {% endif %}
+
+            {% if paginator.num_pages > 1 %}
+                <li class="page-item{% if not page.has_next %} disabled{% endif %}">
+                    <a href="?page={% if page.has_next %}{{ page.next_page_number }}{% else %}{{ page.number }}{% endif %}{% for k, v in kwargs.items %}{% if v %}&amp;{{ k }}={{ v|default:'' }}{% endif %}{% endfor %}" aria-label="Next">
+                        <span aria-hidden="true">&#62;</span>
+                    </a>
+                </li>
+                <li class="page-item">
+                    <a href="?page={{ paginator.num_pages }}{% for k, v in kwargs.items %}{% if v %}&amp;{{ k }}={{ v|default:'' }}{% endif %}{% endfor %}" aria-label="Last">
+                        <span aria-hidden="true">&raquo;</span>
+                    </a>
+                </li>
+            {% endif %}
+        </ul>
+    </nav>
+    {% if title %}
+        <div class="pull-left pagination pagination-info">
+            <span class="text-muted">{{ page.start_index }} - {{ page.end_index }} / {{ paginator.count }} {{ title }}</span>
+        </div>
+    {% endif %}
+</div>
