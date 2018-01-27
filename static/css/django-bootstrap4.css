@@ -6,6 +6,22 @@ a:active {
 
 
 
+/*### sortable th ###*/
+
+.sort-down:after {
+    content: "\25BC";
+}
+
+.sort-up:after {
+    content: "\25B2";
+}
+
+.sort-remove:after {
+    content: "x";
+}
+
+
+
 /*### pagination ###*/
 
 .pagination-info {

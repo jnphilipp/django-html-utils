@@ -17,8 +17,8 @@
             {% else %}
                 {{ field }}
             {% endif %}
-            {% if field.help_text %}<span class="help-block">{{ field.help_text }}</span>{% endif %}
-            {% if field.errors %}<span class="help-block">{{ field.errors }}</span>{% endif %}
+            {% if field.help_text %}<small class="form-text text-muted">{{ field.help_text }}</small>{% endif %}
+            {% if field.errors %}<small class="form-text text-danger">{{ field.errors }}</small>{% endif %}
         </div>
     {% endfor %}
 
