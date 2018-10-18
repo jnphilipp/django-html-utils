@@ -86,13 +86,25 @@ def messages(context):
 
 
 @register.inclusion_tag('bootstrap/pagination.html', takes_context=True)
-def pagination(context, paginator, page, title=None, *args, **kwargs):
+def pagination(context, paginator, page, base_path, title=None, *args,
+               **kwargs):
     start_page = max(int(page.number) - 4, 0)
     end_page = min(int(page.number) + 3, paginator.num_pages)
     context['prange'] = paginator.page_range[start_page:end_page]
     context['page'] = page
+    context['base_path'] = base_path
     context['title'] = title
-    context['kwargs'] = kwargs
+
+    get_params = '?'
+    for k, v in kwargs.items():
+        if not get_params.endswith('&') and not get_params.endswith('?'):
+            get_params += '&'
+        if v:
+            get_params += '%s=%s' % (k, v)
+    if get_params == '?':
+        get_params = ''
+    context['get_params'] = get_params
+
     return context
 
 
