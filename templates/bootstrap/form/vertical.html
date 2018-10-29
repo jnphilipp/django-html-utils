@@ -22,6 +22,10 @@
         </div>
     {% endfor %}
 
+    {% if inlineformset %}
+        {% include "bootstrap/form/_inlineformset.html" %}
+    {% endif %}
+
     {% if btn_submit|default_if_none:True %}
         <div class="form-group">
             <button class="btn btn-primary" type="submit">{% trans btn_title|default:"Submit" %}</button>
