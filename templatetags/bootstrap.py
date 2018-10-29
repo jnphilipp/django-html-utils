@@ -53,7 +53,7 @@ def startswith(value, start):
         return str(value).startswith(start)
 
 
-@register.filter('append_attr')
+@register.filter
 def append_attr(field, attr):
     def process(widget, attrs, attribute, value):
         if attrs.get(attribute):
