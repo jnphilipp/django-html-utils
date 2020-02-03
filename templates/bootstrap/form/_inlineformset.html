@@ -11,9 +11,9 @@
                         <tr>
                             {% for field in iform.visible_fields %}
                                 {% if forloop.last and inlineformset.can_delete %}
-                                    <th><label class="control-label">{{ field.label }}</label></th>
+                                    <th><label class="{% if field|substring:'type="checkbox"' or field|substring:'type="radio"' %}form-check-label{% else %}control-label{% endif %}">{{ field.label }}</label></th>
                                 {% else %}
-                                    <th><label class="control-label{% if field.field.required %} required{% endif %}" for="{{ field.auto_id }}">{{ field.label }}</label></th>
+                                    <th><label class="{% if field|substring:'type="checkbox"' or field|substring:'type="radio"' %}form-check-label{% else %}control-label{% endif %}{% if field.field.required %} required{% endif %}" for="{{ field.auto_id }}">{{ field.label }}</label></th>
                                 {% endif %}
                             {% endfor %}
                         </tr>
@@ -28,7 +28,9 @@
                                     {{ hidden }}
                                 {% endfor %}
                             {% endif %}
-                            {% if field|startswith:"<input" or field|startswith:"<textarea" %}
+                            {% if field|substring:'type="checkbox"' or field|substring:'type="radio"' %}
+                                {{ field|add_class:"form-check-input" }}
+                            {% elif field|startswith:"<input" or field|startswith:"<textarea" %}
                                 {{ field|append_attr:"autocomplete:off"|add_class:"form-control" }}
                             {% else %}
                                 {{ field }}

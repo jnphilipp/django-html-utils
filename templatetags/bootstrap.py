@@ -54,6 +54,14 @@ def startswith(value, start):
 
 
 @register.filter
+def substring(value, sub):
+    if type(value) == str:
+        return sub in value
+    else:
+        return sub in str(value)
+
+
+@register.filter
 def append_attr(field, attr):
     def process(widget, attrs, attribute, value):
         if attrs.get(attribute):
