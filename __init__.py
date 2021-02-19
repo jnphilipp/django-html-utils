@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2018 Nathanael Philipp (jnphilipp) <mail@jnphilipp.org>
+# Copyright (C) 2018-2021 J. Nathanael Philipp (jnphilipp) <nathanael@philipp.land>
 #
 # This file is part of django_bootstrap4.
 #
@@ -15,5 +15,16 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with django_bootstrap4. If not, see <http://www.gnu.org/licenses/>.
+"""Django Bootstrap 4 app."""
 
-default_app_config = 'django_bootstrap4.apps.DjangoBootstrap3Config'
+default_app_config = "django_bootstrap4.apps.DjangoBootstrap4Config"
+
+__author__ = "J. Nathanael Philipp"
+__copyright__ = "Copyright 2018-2021 J. Nathanael Philipp (jnphilipp)"
+__license__ = "GPLv3+"
+__maintainer__ = __author__
+__email__ = "nathanael@philipp.land"
+__app_name__ = "django_bootstrap4"
+__version_info__ = (0, 5, 2)
+__version__ = ".".join(str(e) for e in __version_info__)
+__github__ = "https://github.com/jnphilipp/django_bootstrap4"

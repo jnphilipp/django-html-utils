@@ -1,5 +1,5 @@
 # -*- coding: utf-8 -*-
-# Copyright (C) 2018 Nathanael Philipp (jnphilipp) <mail@jnphilipp.org>
+# Copyright (C) 2018-2021 J. Nathanael Philipp (jnphilipp) <nathanael@philipp.land>
 #
 # This file is part of django_bootstrap4.
 #
@@ -15,9 +15,12 @@
 #
 # You should have received a copy of the GNU General Public License
 # along with django_bootstrap4. If not, see <http://www.gnu.org/licenses/>.
+"""DjangoBootstrap4 app."""
 
 from django.apps import AppConfig
 
 
-class DjangoBootstrap3Config(AppConfig):
-    name = 'django_bootstrap4'
+class DjangoBootstrap4Config(AppConfig):
+    """DjangoBootstrap4 app config."""
+
+    name = "django_bootstrap4"
