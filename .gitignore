@@ -1,3 +1,5 @@
 __pycache__
 *.pyc
 .venv/*
+django_bootstrap4.sublime-workspace
+django_bootstrap4.sublime-project

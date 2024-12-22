@@ -1,1 +1,3 @@
-# django bootstrap3 app
+# django bootstrap4 app
+
+https://getbootstrap.com/docs/
