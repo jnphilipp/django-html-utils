@@ -1,5 +1,18 @@
+# Python
 __pycache__
+dist
+.mypy_cache
+.venv
+*.egg-info
 *.pyc
-.venv/*
-django_bootstrap4.sublime-workspace
-django_bootstrap4.sublime-project
+
+# SublimeText
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+Session.vim
+
+# Django
+testing
+manage.py
