@@ -38,7 +38,11 @@ class DjangoHtmlUtilsTestCase(TestCase):
             'in.css"/>\n<link rel="stylesheet" media="all" href="/static/css/jquery-ui.'
             'structure.min.css"/>\n<link rel="stylesheet" media="all" href="/static/css'
             '/jquery-ui.theme.min.css"/>\n<link rel="stylesheet" media="all" href="/sta'
-            'tic/css/select2.min.css"/>\n',
+            'tic/css/select2.min.css"/>\n<link rel="stylesheet" media="all" href="'
+            '/static/css/fontawesome.min.css"/>\n<link rel="stylesheet" media="all" '
+            'href="/static/css/brands.min.css"/>\n<link rel="stylesheet" media="all" '
+            'href="/static/css/regular.min.css"/>\n<link rel="stylesheet" media="all" '
+            'href="/static/css/solid.min.css"/>\n',
         )
 
         rendered = self.render_template(
@@ -175,11 +179,11 @@ class DjangoHtmlUtilsTestCase(TestCase):
         self.assertEqual(rendered, '<span class="fa-solid fa-search"></span>')
 
         rendered = self.render_template(
-            '{% load django_html_utils %}{% fa "search" tag=i %}'
+            '{% load django_html_utils %}{% fa "search" tag="i" %}'
         )
         self.assertEqual(rendered, '<i class="fa-solid fa-search"></i>')
 
         rendered = self.render_template(
-            '{% load django_html_utils %}{% fa "search" icon-type=regular %}'
+            '{% load django_html_utils %}{% fa "search" icon-type="regular" %}'
         )
         self.assertEqual(rendered, '<i class="fa-regular fa-search"></i>')
