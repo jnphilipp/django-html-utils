@@ -22,6 +22,7 @@ from copy import copy
 from django.core.paginator import Page, Paginator
 from django.forms import Form
 from django.template import Library
+from django.utils.safestring import mark_safe
 from typing import Any, Dict, Optional
 
 register = Library()
@@ -95,6 +96,14 @@ def append_attr(field, attr):
 def add_class(field, css_class):
     """Add a css class template filter."""
     return append_attr(field, "class:" + css_class)
+
+
+@register.simple_tag
+def fa(icon_name: str, tag: str = "span", icon_type: str = "solid") -> str:
+    """Add message template tag."""
+    assert icon_type in ["solid", "regular", "light", "brands"]
+    assert tag in ["span", "i"]
+    return mark_safe(f'<{tag} class="fa-{icon_type} fa-{icon_name}"></{tag}>')
 
 
 @register.inclusion_tag("django_html_utils/css.html")

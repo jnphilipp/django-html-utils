@@ -30,7 +30,7 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-keywords = ["django", "bootstrap", "jquery", "select2"]
+keywords = ["django", "bootstrap", "jquery", "select2", "fontawesome"]
 
 
 [project.urls]
@@ -45,6 +45,7 @@ packages = [
     "django_html_utils.static.css.images",
     "django_html_utils.static.js",
     "django_html_utils.static.js.i18n",
+    "django_html_utils.static.webfonts",
     "django_html_utils.templates.django_html_utils",
     "django_html_utils.templates.django_html_utils.form",
     "django_html_utils.templatetags",
@@ -58,6 +59,7 @@ django_html_utils = [
     "static/css/images/*",
     "static/js/*",
     "static/js/i18n/*",
+    "static/webfonts/*",
     "templates/django_html_utils/*",
     "templates/django_html_utils/form/*",
 ]

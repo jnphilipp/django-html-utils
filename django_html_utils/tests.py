@@ -169,3 +169,28 @@ class DjangoHtmlUtilsTestCase(TestCase):
             'ubmit();"></button>\n            </div>\n        </div>\n    </div>\n</div'
             ">\n",
         )
+
+    def test_fa(self):
+        rendered = self.render_template(
+            '{% load django_html_utils %}{% fa "search" %}'
+        )
+        self.assertEqual(
+            rendered,
+            '\n\n<span class="fa-solid fa-search"></span>\n',
+        )
+
+        rendered = self.render_template(
+                '{% load django_html_utils %}{% fa "search" tag=i %}'
+        )
+        self.assertEqual(
+            rendered,
+            '\n\n<i class="fa-solid fa-search"></i>\n',
+        )
+
+        rendered = self.render_template(
+                '{% load django_html_utils %}{% fa "search" icon-type=regular %}'
+        )
+        self.assertEqual(
+            rendered,
+            '\n\n<i class="fa-regular fa-search"></i>\n',
+        )
