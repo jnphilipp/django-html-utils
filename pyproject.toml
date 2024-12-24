@@ -9,7 +9,7 @@ version = "0.1.0"
 authors = [
     {name = "J. Nathanael Philipp", email = "nathanael@philipp.land"}
 ]
-description="HTML utils to for django."
+description="HTML utils app for django."
 readme = "README.md"
 license = {text = "GPLv3+"}
 requires-python = ">=3.10"

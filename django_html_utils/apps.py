@@ -23,6 +23,6 @@ from django.utils.translation import gettext_lazy as _
 class DjangoHtmlConfigConfig(AppConfig):
     """DjangoHtmlConfig app config."""
 
-    name = "django-html-utils"
+    name = "django_html_utils"
     verbose_name = _("Django HTML Utils")
     verbose_name_plural = _("Django HTML Utils")
