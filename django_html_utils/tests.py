@@ -186,4 +186,9 @@ class DjangoHtmlUtilsTestCase(TestCase):
         rendered = self.render_template(
             '{% load django_html_utils %}{% fa "search" icon_type="regular" %}'
         )
+        self.assertEqual(rendered, '<span class="fa-regular fa-search"></span>')
+
+        rendered = self.render_template(
+            '{% load django_html_utils %}{% fa "search" icon_type="regular" tag="i" %}'
+        )
         self.assertEqual(rendered, '<i class="fa-regular fa-search"></i>')
