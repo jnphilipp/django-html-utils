@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "django-html-utils"
-version = "0.1.0"
+version = "0.1.1"
 authors = [
     {name = "J. Nathanael Philipp", email = "nathanael@philipp.land"}
 ]
@@ -45,8 +45,8 @@ packages = [
     "django_html_utils.static.css.images",
     "django_html_utils.static.js",
     "django_html_utils.static.js.i18n",
-    "django_html_utils.templates.bootstrap",
-    "django_html_utils.templates.bootstrap.form",
+    "django_html_utils.templates.django_html_utils",
+    "django_html_utils.templates.django_html_utils.form",
     "django_html_utils.templatetags",
 ]
 
