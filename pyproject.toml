@@ -4,12 +4,12 @@ build-backend = "setuptools.build_meta"
 
 
 [project]
-name = "django_bootstrap5"
-version = "0.3.15"
+name = "django-html-utils"
+version = "0.1.0"
 authors = [
     {name = "J. Nathanael Philipp", email = "nathanael@philipp.land"}
 ]
-description="Add Bootstrap 5 to Django."
+description="HTML utils to for django."
 readme = "README.md"
 license = {text = "GPLv3+"}
 requires-python = ">=3.10"
@@ -30,34 +30,34 @@ classifiers = [
     "Programming Language :: Python :: 3.13",
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
-keywords = ["django", "bootstrap", "bootstrap 5"]
+keywords = ["django", "bootstrap", "jquery", "select2"]
 
 
 [project.urls]
-"Homepage" = "http://github.com/jnphilipp/django_bootstrap5"
-"Bug Tracker" = "http://github.com/jnphilipp/django_bootstrap5/issues"
+"Homepage" = "http://github.com/jnphilipp/django-html-utils"
+"Bug Tracker" = "http://github.com/jnphilipp/django-html-utils/issues"
 
 [tool.setuptools]
 packages = [
-    "django_bootstrap5",
-    "django_bootstrap5.static",
-    "django_bootstrap5.static.css",
-    "django_bootstrap5.static.css.images",
-    "django_bootstrap5.static.js",
-    "django_bootstrap5.static.js.i18n",
-    "django_bootstrap5.templates.bootstrap",
-    "django_bootstrap5.templates.bootstrap.form",
-    "django_bootstrap5.templatetags",
+    "django_html_utils",
+    "django_html_utils.static",
+    "django_html_utils.static.css",
+    "django_html_utils.static.css.images",
+    "django_html_utils.static.js",
+    "django_html_utils.static.js.i18n",
+    "django_html_utils.templates.bootstrap",
+    "django_html_utils.templates.bootstrap.form",
+    "django_html_utils.templatetags",
 ]
 
 [tool.setuptools.package-data]
-django_bootstrap5 = [
+django_html_utils = [
     "py.typed",
     "static/*",
     "static/css/*",
     "static/css/images/*",
     "static/js/*",
     "static/js/i18n/*",
-    "templates/bootstrap/*",
-    "templates/bootstrap/form/*",
+    "templates/django_html_utils/*",
+    "templates/django_html_utils/form/*",
 ]

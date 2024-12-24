@@ -1,33 +1,35 @@
-# -*- coding: utf-8 -*-
 # Copyright (C) 2022-2024 J. Nathanael Philipp (jnphilipp) <nathanael@philipp.land>
 #
-# This file is part of django_bootstrap5.
+# This file is part of django-html-utils.
 #
-# django_bootstrap5 is free software: you can redistribute it and/or modify
+# django-html-utils is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
-# django_bootstrap5 is distributed in the hope that it will be useful,
+# django-html-utils is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with django_bootstrap5. If not, see <http://www.gnu.org/licenses/>.
+# along with django-html-utils. If not, see <http://www.gnu.org/licenses/>.
+"""DjangoHtmlUtils tests."""
 
 from django.template import Context, Template
 from django.test import TestCase
 
 
-class BootstrapTestCase(TestCase):
+class DjangoHtmlUtilsTestCase(TestCase):
     def render_template(self, string, context=None):
         context = context or {}
         context = Context(context)
         return Template(string).render(context)
 
     def test_load_css_js(self):
-        rendered = self.render_template("{% load bootstrap %}{% bootstrap_css %}")
+        rendered = self.render_template(
+            "{% load django_html_utils %}{% django_html_utils_css %}"
+        )
         self.assertEqual(
             rendered,
             '\n\n<link rel="stylesheet" media="all" href="/static/css/bootstrap.min.css'
@@ -39,7 +41,9 @@ class BootstrapTestCase(TestCase):
             'tic/css/select2.min.css"/>\n',
         )
 
-        rendered = self.render_template("{% load bootstrap %}{% bootstrap_js %}")
+        rendered = self.render_template(
+            "{% load django_html_utils %}{% django_html_utils_js %}"
+        )
         self.assertEqual(
             rendered,
             '\n\n<script type="text/javascript" src="/static/js/jquery.min.js"></script'
@@ -52,7 +56,9 @@ class BootstrapTestCase(TestCase):
         )
 
     def test_iframeformmodal(self):
-        rendered = self.render_template("{% load bootstrap %}{% iframe_form_modal %}")
+        rendered = self.render_template(
+            "{% load django_html_utils %}{% iframe_form_modal %}"
+        )
         self.assertEqual(
             rendered,
             '\n\n<script type="text/javascript">\n    $(function() {\n        $("a.ifra'
@@ -88,7 +94,7 @@ class BootstrapTestCase(TestCase):
             "div>\n        </div>\n    </div>\n</div>\n",
         )
         rendered = self.render_template(
-            '{% load bootstrap %}{% iframe_form_modal iframe_min_height="500px" %}'
+            '{% load django_html_utils %}{% iframe_form_modal iframe_min_height="500px" %}'
         )
         self.assertEqual(
             rendered,
@@ -125,8 +131,8 @@ class BootstrapTestCase(TestCase):
             ">\n            </div>\n        </div>\n    </div>\n</div>\n",
         )
         rendered = self.render_template(
-            '{% load bootstrap %}{% iframe_form_modal iframe_min_height="400px" '
-            + 'iframe_max_height="800px" %}'
+            '{% load django_html_utils %}{% iframe_form_modal iframe_min_height="400px"'
+            + ' iframe_max_height="800px" %}'
         )
         self.assertEqual(
             rendered,

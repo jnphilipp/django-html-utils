@@ -1,21 +1,20 @@
-# -*- coding: utf-8 -*-
 # Copyright (C) 2022-2024 J. Nathanael Philipp (jnphilipp) <nathanael@philipp.land>
 #
-# This file is part of django_bootstrap5.
+# This file is part of django-html-utils.
 #
-# django_bootstrap5 is free software: you can redistribute it and/or modify
+# django-html-utils is free software: you can redistribute it and/or modify
 # it under the terms of the GNU General Public License as published by
 # the Free Software Foundation, either version 3 of the License, or
 # (at your option) any later version.
 #
-# django_bootstrap5 is distributed in the hope that it will be useful,
+# django-html-utils is distributed in the hope that it will be useful,
 # but WITHOUT ANY WARRANTY; without even the implied warranty of
 # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 # GNU General Public License for more details.
 #
 # You should have received a copy of the GNU General Public License
-# along with django_bootstrap5. If not, see <http://www.gnu.org/licenses/>.
-"""Django bootstrap 5 template tags bootstrap library."""
+# along with django-html-utils. If not, see <http://www.gnu.org/licenses/>.
+"""DjangoHtmlUtils templatetags django_html_utils library."""
 
 import types
 
@@ -98,25 +97,25 @@ def add_class(field, css_class):
     return append_attr(field, "class:" + css_class)
 
 
-@register.inclusion_tag("bootstrap/css.html")
-def bootstrap_css():
-    """Load bootstrap css files template tag."""
+@register.inclusion_tag("django_html_utils/css.html")
+def django_html_utils_css():
+    """Load django_html_utils css files template tag."""
     return {}
 
 
-@register.inclusion_tag("bootstrap/js.html")
-def bootstrap_js() -> Dict:
-    """Load bootstrap js files template tag."""
+@register.inclusion_tag("django_html_utils/js.html")
+def django_html_utils_js() -> Dict:
+    """Load django_html_utils js files template tag."""
     return {}
 
 
-@register.inclusion_tag("bootstrap/messages.html", takes_context=True)
+@register.inclusion_tag("django_html_utils/messages.html", takes_context=True)
 def messages(context: Dict) -> Dict:
     """Add message template tag."""
     return {"messages": context["messages"]}
 
 
-@register.inclusion_tag("bootstrap/pagination.html", takes_context=True)
+@register.inclusion_tag("django_html_utils/pagination.html", takes_context=True)
 def pagination(
     context: Dict,
     paginator: Paginator,
@@ -146,8 +145,8 @@ def pagination(
     return context
 
 
-@register.inclusion_tag("bootstrap/form/base.html", takes_context=True)
-def bootstrap_form(
+@register.inclusion_tag("django_html_utils/form/base.html", takes_context=True)
+def form(
     context: Dict,
     form: Form,
     url: str = "",
@@ -168,7 +167,7 @@ def bootstrap_form(
     return context
 
 
-@register.inclusion_tag("bootstrap/sortable_th.html", takes_context=True)
+@register.inclusion_tag("django_html_utils/sortable_th.html", takes_context=True)
 def sortable_th(
     context: Dict,
     column_name: str,
@@ -194,7 +193,7 @@ def sortable_th(
     return context
 
 
-@register.inclusion_tag("bootstrap/iframe_form_modal.html", takes_context=True)
+@register.inclusion_tag("django_html_utils/iframe_form_modal.html", takes_context=True)
 def iframe_form_modal(
     context: Dict,
     iframe_min_height: Optional[int] = None,

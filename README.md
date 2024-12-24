@@ -1,6 +1,6 @@
-# django bootstrap5 app
+# django-html-utils app
 
-![Linting & Tests](https://github.com/jnphilipp/django_bootstrap5/actions/workflows/tests.yml/badge.svg)
+![Linting & Tests](https://github.com/jnphilipp/django-html-utils/actions/workflows/tests.yml/badge.svg)
 
 
 ## Included versions
@@ -15,12 +15,12 @@
 
 ### Basics
 
-Load with `{% load bootstrap %}` and include CSS/JS with:
+Load with `{% load django_html_utils %}` and include CSS/JS with:
 
 ```html
 <head>
-  {% bootstrap_css %}
-  {% bootstrap_js %}
+  {% django_html_utils_css %}
+  {% django_html_utils_js %}
 </head>
 ```
 

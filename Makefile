@@ -4,7 +4,7 @@ DOC_DIR?=/usr/share/doc
 SHARE_DIR?=/usr/share
 DEST_DIR?=
 
-FILES := $(shell find django_bootstrap5/* -type f ! -path "**/__pycache__")
+FILES := $(shell find django-html-utils/* -type f ! -path "**/__pycache__")
 
 
 ifdef VERBOSE
@@ -20,8 +20,8 @@ print-%:
 clean:
 	$(Q)rm -rf ./build
 	$(Q)rm -rf ./dist
-	$(Q)rm -rf ./django_bootstrap5.egg-info
-	$(Q)find django_bootstrap5 -depth -name __pycache__ -exec rm -rf {} \;
+	$(Q)rm -rf ./django-html-utils.egg-info
+	$(Q)find django_html_utils -depth -name __pycache__ -exec rm -rf {} \;
 
 
 install: build/copyright build/changelog.Debian.gz
@@ -47,8 +47,8 @@ build:
 
 
 build/copyright: build
-	$(Q)echo "Upstream-Name: django_bootstrap5" > build/copyright
-	$(Q)echo "Source: https://github.com/jnphilipp/django_bootstrap5" >> build/copyright
+	$(Q)echo "Upstream-Name: django-html-utils" > build/copyright
+	$(Q)echo "Source: https://github.com/jnphilipp/django-html-utils" >> build/copyright
 	$(Q)echo "" >> build/copyright
 	$(Q)echo "Files: *" >> build/copyright
 	$(Q)echo "Copyright: 2014-2024 J. Nathanael Philipp (jnphilipp) <nathanael@philipp.land>" >> build/copyright
@@ -75,15 +75,15 @@ build/changelog.Debian.gz: build
 		declare TAGS=(`git tag`); \
 		for ((i=$${#TAGS[@]};i>=0;i--)); do \
 			if [ $$i -eq 0 ]; then \
-				echo -e "django_bootstrap5 ($${TAGS[$$i]}) unstable; urgency=medium" >> build/changelog; \
+				echo -e "django-html-utils ($${TAGS[$$i]}) unstable; urgency=medium" >> build/changelog; \
 				git log $${TAGS[$$i]} --no-merges --format="  * %h %s"  >> build/changelog; \
 				git log $${TAGS[$$i]} -n 1 --format=" -- %an <%ae>  %aD" >> build/changelog; \
 			elif [ $$i -eq $${#TAGS[@]} ] && [ $$(git log $${TAGS[$$i-1]}..HEAD --oneline | wc -l) -ne 0 ]; then \
-				echo -e "django_bootstrap5 ($${TAGS[$$i-1]}-$$(git log -n 1 --format='%h')) unstable; urgency=medium" >> build/changelog; \
+				echo -e "django-html-utils ($${TAGS[$$i-1]}-$$(git log -n 1 --format='%h')) unstable; urgency=medium" >> build/changelog; \
 				git log $${TAGS[$$i-1]}..HEAD --no-merges --format="  * %h %s"  >> build/changelog; \
 				git log HEAD -n 1 --format=" -- %an <%ae>  %aD" >> build/changelog; \
 			elif [ $$i -lt $${#TAGS[@]} ]; then \
-				echo -e "django_bootstrap5 ($${TAGS[$$i]}) unstable; urgency=medium" >> build/changelog; \
+				echo -e "django-html-utils ($${TAGS[$$i]}) unstable; urgency=medium" >> build/changelog; \
 				git log $${TAGS[$$i-1]}..$${TAGS[$$i]} --no-merges --format="  * %h %s"  >> build/changelog; \
 				git log $${TAGS[$$i]} -n 1 --format=" -- %an <%ae>  %aD" >> build/changelog; \
 			fi; \
