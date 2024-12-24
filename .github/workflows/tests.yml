@@ -43,5 +43,5 @@ jobs:
       - name: Run Tests
         run: |
           django-admin startproject example .
-          echo "INSTALLED_APPS.append('django_bootstrap5')" >> example/settings.py
+          echo "INSTALLED_APPS.append('django_html_utils')" >> example/settings.py
           python manage.py test
