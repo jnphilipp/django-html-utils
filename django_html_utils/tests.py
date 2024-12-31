@@ -98,7 +98,7 @@ class DjangoHtmlUtilsTestCase(TestCase):
             "</div>\n        </div>\n    </div>\n</div>\n",
         )
         rendered = self.render_template(
-            '{% load django_html_utils %}{% iframe_form_modal '
+            "{% load django_html_utils %}{% iframe_form_modal "
             + 'iframe_min_height="500px" %}'
         )
         self.assertEqual(
