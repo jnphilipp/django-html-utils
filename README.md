@@ -3,7 +3,6 @@
 HTML utils app for django.
 
 ![Linting & Tests](https://github.com/jnphilipp/django-html-utils/actions/workflows/tests.yml/badge.svg)
-
 [![pypi Version](https://img.shields.io/pypi/v/django-html-utils.svg?logo=pypi&logoColor=white)](https://pypi.org/project/django-html-utils/)
 
 
