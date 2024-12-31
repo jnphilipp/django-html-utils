@@ -34,9 +34,13 @@ Load with `{% load django_html_utils %}` and include CSS/JS with:
 Simple modal with an iFrame, designed for usage with forms.
 
 Add modal with `{% iframe_form_modal %}`, with options:
-* **iframe_min_height**: `iframe_min_height="500px"` set minimum height of iframe
-* **iframe_max_height**: `iframe_max_height="500px"` set maximum height of iframe
-* **static_backdrop**: `static_backdrop=False` static backdrop of the model, defaults to `True`
+* **iframe_min_height**: set minimum height of iframe, defaults to None
+* **iframe_max_height**: set maximum height of iframe, defaults to None
+* **static_backdrop**: if the backdrop of the model should be static, defaults to `True`
+* **submit_button_text**: the text of the submit button, when `None` no text will be displayed, defaults to `None`
+* **fa_icon_name**: the Font-Awesome icon name on the submit button
+* **fa_tag**: the Font-Awesome tag to use, defaults to `span`
+* **fa_icon_type**: the icon type, defaults to `solid`
 
 Open link with:
 ```html

@@ -1,4 +1,4 @@
-{% load i18n %}
+{% load django_html_utils i18n %}
 
 <script type="text/javascript">
     $(function() {
@@ -43,7 +43,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">{% trans "Cancel" %}</button>
-                <button id="iframeFormModalSubmit" type="submit" class="btn" onclick="window.frames['iframeFormModalIframe'].document.forms[0].submit();"></button>
+                <button id="iframeFormModalSubmit" type="submit" class="btn" onclick="window.frames['iframeFormModalIframe'].document.forms[0].submit();">{% if fa_icon_name is not None %}{% fa fa_icon_name tag=fa_tag icon_type=fa_icon_type %}{% endif %} {% if submit_button_text is not None %}{{ submit_button_text }}{% endif %}</button>
             </div>
         </div>
     </div>

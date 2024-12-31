@@ -208,10 +208,28 @@ def iframe_form_modal(
     iframe_min_height: Optional[int] = None,
     iframe_max_height: Optional[int] = None,
     static_backdrop: bool = True,
+    submit_button_text: str | None = None,
+    fa_icon_name: str | None = None,
+    fa_tag: str = "span",
+    fa_icon_type: str = "solid",
 ):
-    """Add modal with an iframe."""
+    """Add modal with an iframe, designed for usage with forms.
+
+    Args:
+     * iframe_min_height: the minimum height of the iframe, defaults to `None`.
+     * iframe_max_height: the maximum height of the iframe, defaults to `None`.
+     * static_backdrop: if the backdrop should be static, defaults to `True`.
+     * submit_button_text: the text of the submit button, when `None` no text will be
+       displayed, defaults to `None`.
+     * fa_icon_name: the Font-Awesome icon name on the submit button.
+     * fa_tag: the Font-Awesome tag to use, defaults to `span`.
+     * fa_icon_type: the icon type, defaults to `solid`.
+    """
     context["iframe_min_height"] = iframe_min_height
     context["iframe_max_height"] = iframe_max_height
     context["static_backdrop"] = static_backdrop
-
+    context["submit_button_text"] = submit_button_text
+    context["fa_icon_name"] = fa_icon_name
+    context["fa_tag"] = fa_tag
+    context["fa_icon_type"] = fa_icon_type
     return context
