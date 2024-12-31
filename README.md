@@ -29,6 +29,23 @@ Load with `{% load django_html_utils %}` and include CSS/JS with:
 </head>
 ```
 
+
+### Font-Awesome
+
+To add a Font-Awesome icon use `{% fa "icon-name" %}`. Additional options are `tag`, for the tag to use, defaults to `span` and `icon_type`, for the icon type, defaults to `solid`.
+
+For example:
+
+```html
+{% fa "upload" %}
+```
+
+resolves to:
+```html
+<span class="fa-solid fa-upload"></span>
+```
+
+
 ### iFrame modal
 
 Simple modal with an iFrame, designed for usage with forms.

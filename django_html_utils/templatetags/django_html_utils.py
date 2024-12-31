@@ -100,9 +100,17 @@ def add_class(field, css_class):
 
 @register.simple_tag
 def fa(icon_name: str, tag: str = "span", icon_type: str = "solid") -> str:
-    """Add message template tag."""
+    """Add a Font-Awesome icon.
+
+    Args:
+     * icon_name: The icon name.
+     * tag: The tag to use, defaults to `span`.
+     * icon_type: The icon type, defaults to `solid`.
+    """
     assert icon_type in ["solid", "regular", "light", "brands"]
     assert tag in ["span", "i"]
+    if icon_name.startswith("fa-"):
+        icon_name = icon_name[3:]
     return mark_safe(f'<{tag} class="fa-{icon_type} fa-{icon_name}"></{tag}>')
 
 
