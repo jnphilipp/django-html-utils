@@ -75,7 +75,7 @@ class DjangoHtmlUtilsTestCase(TestCase):
             + r'maxlength="100" class="form-control" autocomplete="off" required '
             + r'id="id_name">\s*</div>\s*</div>\s*<div class="row">\s*<div class="'
             + r'offset-sm-3 col-sm-9">\s*<button class="btn btn-primary" type="submit">'
-            + r'\s*Submit\s*</button>\s*</div>\s*</div>\s*</form>\s*$',
+            + r"\s*Submit\s*</button>\s*</div>\s*</div>\s*</form>\s*$",
         )
 
     def test_iframeformmodal(self) -> None:
