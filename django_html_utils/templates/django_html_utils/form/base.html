@@ -1,9 +1,9 @@
 {% load i18n static %}
 
 {% if type == "horizontal" %}
-    {% include "bootstrap/form/horizontal.html" %}
+    {% include "django_html_utils/form/horizontal.html" %}
 {% elif type == "inline" %}
-    {% include "bootstrap/form/inline.html" %}
+    {% include "django_html_utils/form/inline.html" %}
 {% elif type == "vertical" %}
-    {% include "bootstrap/form/vertical.html" %}
+    {% include "django_html_utils/form/vertical.html" %}
 {% endif %}
