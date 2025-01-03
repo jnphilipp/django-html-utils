@@ -16,17 +16,17 @@
 # along with django-html-utils. If not, see <http://www.gnu.org/licenses/>.
 """DjangoHtmlUtils tests."""
 
+from django import forms
 from django.template import Context, Template
 from django.test import TestCase
 
 
 class DjangoHtmlUtilsTestCase(TestCase):
-    def render_template(self, string, context=None):
-        context = context or {}
+    def render_template(self, string, context: dict = {}) -> str:
         context = Context(context)
         return Template(string).render(context)
 
-    def test_load_css_js(self):
+    def test_load_css_js(self) -> None:
         rendered = self.render_template(
             "{% load django_html_utils %}{% django_html_utils_css %}"
         )
@@ -59,7 +59,26 @@ class DjangoHtmlUtilsTestCase(TestCase):
             " $('[data-toggle=\"tooltip\"]').tooltip();\n    });\n</script>\n",
         )
 
-    def test_iframeformmodal(self):
+    def test_form(self) -> None:
+        class SimpleForm(forms.Form):
+            name = forms.CharField(max_length=100)
+
+        rendered = self.render_template(
+            "{% load django_html_utils %}{% form form=form %}",
+            context={"form": SimpleForm()},
+        )
+        self.assertRegex(
+            rendered,
+            r'^\s*<form\s*action="" method="post"\s*>\s*<div class="row mb-3">\s*<label'
+            + r' class="col-sm-3 col-form-label required" for="id_name">Name:</label>'
+            + r'\s*<div class="col-sm-9">\s*<input type="text" name="name" '
+            + r'maxlength="100" class="form-control" autocomplete="off" required '
+            + r'id="id_name">\s*</div>\s*</div>\s*<div class="row">\s*<div class="'
+            + r'offset-sm-3 col-sm-9">\s*<button class="btn btn-primary" type="submit">'
+            + r'\s*Submit\s*</button>\s*</div>\s*</div>\s*</form>\s*$',
+        )
+
+    def test_iframeformmodal(self) -> None:
         rendered = self.render_template(
             "{% load django_html_utils %}{% iframe_form_modal %}"
         )
@@ -215,7 +234,7 @@ class DjangoHtmlUtilsTestCase(TestCase):
             "            </div>\n        </div>\n    </div>\n</div>\n",
         )
 
-    def test_fa(self):
+    def test_fa(self) -> None:
         rendered = self.render_template('{% load django_html_utils %}{% fa "search" %}')
         self.assertEqual(rendered, '<span class="fa-solid fa-search"></span>')
 
