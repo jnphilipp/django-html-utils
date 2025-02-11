@@ -4,7 +4,7 @@ DOC_DIR?=/usr/share/doc
 SHARE_DIR?=/usr/share
 DEST_DIR?=
 
-FILES := $(shell find django-html-utils/* -type f ! -path "**/__pycache__")
+FILES := $(shell find django_html_utils/* -type f ! -path "**/__pycache__")
 
 
 ifdef VERBOSE
@@ -27,18 +27,18 @@ clean:
 install: build/copyright build/changelog.Debian.gz
 	$(Q)python -m installer --destdir="${DEST_DIR}" dist/*.whl
 
-	$(Q)install -Dm 0644 build/changelog.Debian.gz "${DEST_DIR}${DOC_DIR}"/python-django-bootstrap5/changelog.Debian.gz
-	$(Q)install -Dm 0644 build/copyright "${DEST_DIR}${DOC_DIR}"/python-django-bootstrap5/copyright
+	$(Q)install -Dm 0644 build/changelog.Debian.gz "${DEST_DIR}${DOC_DIR}"/python-django-html-utils/changelog.Debian.gz
+	$(Q)install -Dm 0644 build/copyright "${DEST_DIR}${DOC_DIR}"/python-django-html-utils/copyright
 
-	@echo "python-django-bootstrap5 install completed."
+	@echo "python-django-html-utils install completed."
 
 
 uninstall:
 	$(Q)python setup.py build
 	$(Q)python setup.py install --root="build/tmp/" --optimize=1 --skip-build --record build/files.txt
 	$(Q)xargs rm -r < build/files.txt
-	$(Q)rm -r "${DEST_DIR}${DOC_DIR}"/python-django-bootstrap5
-	@echo "python-django-bootstrap5 uninstall completed."
+	$(Q)rm -r "${DEST_DIR}${DOC_DIR}"/python-django-html-utils
+	@echo "python-django-html-utils uninstall completed."
 
 
 build:

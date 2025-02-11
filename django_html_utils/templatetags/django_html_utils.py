@@ -1,4 +1,4 @@
-# Copyright (C) 2022-2024 J. Nathanael Philipp (jnphilipp) <nathanael@philipp.land>
+# Copyright (C) 2022-2025 J. Nathanael Philipp (jnphilipp) <nathanael@philipp.land>
 #
 # This file is part of django-html-utils.
 #
@@ -129,7 +129,7 @@ def django_html_utils_js() -> Dict:
 @register.inclusion_tag("django_html_utils/messages.html", takes_context=True)
 def messages(context: Dict) -> Dict:
     """Add message template tag."""
-    return {"messages": context["messages"]}
+    return {"messages": context["messages"] if "messages" in context else []}
 
 
 @register.inclusion_tag("django_html_utils/pagination.html", takes_context=True)
