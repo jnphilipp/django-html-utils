@@ -8,7 +8,7 @@ HTML utils app for django.
 
 ## Included versions
 
-* [Bootstrap](https://github.com/twbs/bootstrap) (bundle): 5.3.5
+* [Bootstrap](https://github.com/twbs/bootstrap) (bundle): 5.3.6
 * [Font-Awesome](https://github.com/FortAwesome/Font-Awesome): 6.7.2
 * [jQuery](https://github.com/jquery/jquery): 3.7.1
 * [jQuery UI](https://github.com/jquery/jquery-ui): 1.14.1
