@@ -20,10 +20,10 @@ default_app_config = "django-html-utils.apps.DjangoHtmlUtilsConfig"
 
 __author__ = "J. Nathanael Philipp"
 __copyright__ = "Copyright 2022-2025 J. Nathanael Philipp (jnphilipp)"
-__license__ = "GPLv3+"
+__license__ = "GPL-3.0-or-later"
 __maintainer__ = __author__
 __email__ = "nathanael@philipp.land"
 __app_name__ = "django-html-utils"
-__version_info__ = (0, 2, 5)
+__version_info__ = (0, 2, 6)
 __version__ = ".".join(str(e) for e in __version_info__)
 __github__ = "https://github.com/jnphilipp/django-html-utils"
