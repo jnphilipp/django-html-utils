@@ -24,6 +24,6 @@ __license__ = "GPL-3.0-or-later"
 __maintainer__ = __author__
 __email__ = "nathanael@philipp.land"
 __app_name__ = "django-html-utils"
-__version_info__ = (0, 2, 10)
+__version_info__ = (0, 2, 11)
 __version__ = ".".join(str(e) for e in __version_info__)
 __github__ = "https://github.com/jnphilipp/django-html-utils"
