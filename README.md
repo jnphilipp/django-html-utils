@@ -52,6 +52,7 @@ Simple modal with an iFrame, designed for usage with forms.
 Add modal with `{% iframe_form_modal %}`, with options:
 * **iframe_min_height**: set minimum height of iframe, defaults to None
 * **iframe_max_height**: set maximum height of iframe, defaults to None
+* **iframe_options**: set additional iframe options, defaults to None
 * **static_backdrop**: if the backdrop of the model should be static, defaults to `True`
 * **submit_button_text**: the text of the submit button, when `None` no text will be displayed, defaults to `None`
 * **fa_icon_name**: the Font-Awesome icon name on the submit button

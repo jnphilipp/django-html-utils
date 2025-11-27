@@ -213,8 +213,9 @@ def sortable_th(
 @register.inclusion_tag("django_html_utils/iframe_form_modal.html", takes_context=True)
 def iframe_form_modal(
     context: Dict,
-    iframe_min_height: Optional[int] = None,
-    iframe_max_height: Optional[int] = None,
+    iframe_min_height: int | None = None,
+    iframe_max_height: int | None = None,
+    iframe_options: str | None = None,
     static_backdrop: bool = True,
     submit_button_text: str | None = None,
     fa_icon_name: str | None = None,
@@ -235,6 +236,7 @@ def iframe_form_modal(
     """
     context["iframe_min_height"] = iframe_min_height
     context["iframe_max_height"] = iframe_max_height
+    context["iframe_options"] = iframe_options
     context["static_backdrop"] = static_backdrop
     context["submit_button_text"] = submit_button_text
     context["fa_icon_name"] = fa_icon_name
