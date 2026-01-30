@@ -1,4 +1,4 @@
-# Copyright (C) 2022-2025 J. Nathanael Philipp (jnphilipp) <nathanael@philipp.land>
+# Copyright (C) 2022-2026 J. Nathanael Philipp (jnphilipp) <nathanael@philipp.land>
 #
 # This file is part of django-html-utils.
 #
