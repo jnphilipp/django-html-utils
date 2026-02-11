@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "django-html-utils"
-version = "0.2.12"
+version = "0.2.13"
 authors = [
     {name = "J. Nathanael Philipp", email = "nathanael@philipp.land"}
 ]
@@ -58,7 +58,7 @@ django_html_utils = [
     "static/css/*",
     "static/css/images/*",
     "static/js/*",
-    "static/js/i18n/*",
+    "static/js/select2/*",
     "static/webfonts/*",
     "templates/django_html_utils/*",
     "templates/django_html_utils/form/*",
